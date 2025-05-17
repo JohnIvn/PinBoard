@@ -51,6 +51,7 @@
   cursor: move;
   user-select: none;
   transition: box-shadow 0.2s ease;
+  z-index: 1;
 }
 
 .note:hover {
@@ -69,6 +70,7 @@
   flex-direction: column;
   gap: 15px;
   height: 100%;
+  z-index: 10;
 }
 
 .note textarea {
@@ -84,31 +86,40 @@
   outline: none;
 }
 
-.color-picker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 5px;
+/* Color Picker Styles */
+.color-picker-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 10px 0;
 }
 
-.color-picker span {
-  font-size: 14px;
-  color: #555;
+.color-picker-header {
+  margin-bottom: 12px;
 }
 
-.color-options {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+.color-picker-header h4 {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.color-options-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
 }
 
 .color-option {
-  width: 22px;
-  height: 22px;
-  border: 1px solid #ddd;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.2s ease;
+  padding: 0;
+  border: 2px solid transparent;
 }
 
 .color-option:hover {
@@ -116,8 +127,8 @@
 }
 
 .color-option.selected {
-  transform: scale(1.2);
-  box-shadow: 0 0 0 2px #333;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #333;
 }
 
 .button-group {

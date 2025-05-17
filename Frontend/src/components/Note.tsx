@@ -69,11 +69,12 @@ export default function NoteComponent({
             onKeyDown={handleKeyDown}
             style={{ color: selectedTextColor }}
           />
+
           <ColorPicker
             selectedColor={selectedTextColor}
             setSelectedColor={setSelectedTextColor}
-            colors={[]}
           />
+
           <div className="button-group">
             <button className="save-button" onClick={handleSave}>
               Save
